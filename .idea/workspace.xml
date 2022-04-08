@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ad77335c-4a71-4e31-afd1-82e8ed64f1bd" name="Default Changelist" comment="none">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lyh/worker.py" beforeDir="false" afterPath="$PROJECT_DIR$/lyh/worker.py" afterDir="false" />
-    </list>
+    <list default="true" id="ad77335c-4a71-4e31-afd1-82e8ed64f1bd" name="Default Changelist" comment="把R2改成了uncentered R2 ,主要函数在main_xy_with_scale" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -163,7 +160,7 @@
       <workItem from="1648541215872" duration="4126000" />
       <workItem from="1648611286041" duration="13409000" />
       <workItem from="1648712537139" duration="1533000" />
-      <workItem from="1649297879043" duration="11001000" />
+      <workItem from="1649297879043" duration="11313000" />
     </task>
     <task id="LOCAL-00001" summary="可青给到的社区公园后8个有问题">
       <created>1649302037666</created>
@@ -179,7 +176,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649302300290</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="把R2改成了uncentered R2 ,主要函数在main_xy_with_scale">
+      <created>1649387670217</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1649387670217</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -188,7 +192,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="可青给到的社区公园后8个有问题" />
     <MESSAGE value="none" />
-    <option name="LAST_COMMIT_MESSAGE" value="none" />
+    <MESSAGE value="把R2改成了uncentered R2 ,主要函数在main_xy_with_scale" />
+    <option name="LAST_COMMIT_MESSAGE" value="把R2改成了uncentered R2 ,主要函数在main_xy_with_scale" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1010" y="446" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1649302270282">
@@ -244,10 +249,10 @@
     </state>
     <state x="-1334" y="621" key="SettingsEditor/0.0.2560.1400/-1920.365.1920.1040@-1920.365.1920.1040" timestamp="1649301000025" />
     <state x="781" y="344" key="SettingsEditor/0.0.2560.1400/-1920.365.1920.1040@0.0.2560.1400" timestamp="1649300930184" />
-    <state x="872" y="433" key="Vcs.Push.Dialog.v2" timestamp="1649302305685">
+    <state x="872" y="433" key="Vcs.Push.Dialog.v2" timestamp="1649387685098">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="872" y="433" key="Vcs.Push.Dialog.v2/0.0.2560.1400/-1920.365.1920.1040@0.0.2560.1400" timestamp="1649302305685" />
+    <state x="872" y="433" key="Vcs.Push.Dialog.v2/0.0.2560.1400/-1920.365.1920.1040@0.0.2560.1400" timestamp="1649387685098" />
     <state width="1288" height="708" key="XDebugger.FullValuePopup" timestamp="1648691835926">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
