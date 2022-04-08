@@ -59,6 +59,20 @@ def goodness_of_fit(y_fitting, y_no_fitting):
     rr = SSR /SST
     return rr
 
+
+def uncentered_goodness_of_fit(y_fitting, y_no_fitting):
+    """
+    计算拟合优度 uncentered R^2
+    :param y_fitting: List[int] or array[int] 拟合好的y值
+    :param y_no_fitting: List[int] or array[int] 待拟合y值
+    :return: uncentered 拟合优度R^2
+    """
+    SSE = __sse(y_fitting, y_no_fitting)
+    sum_y_no_fit = np.dot(np.array(y_no_fitting), np.array(y_no_fitting))
+    rr = 1 - SSE / sum_y_no_fit
+    return rr
+
+
 def expon_fit(x, a, b, c):
     return a * np.exp(-b * x) + c
 
@@ -126,7 +140,7 @@ def main(data):
     plt.show()
 
 
-def main_xy_with_scale(x, y, fig_path):
+def main_xy_with_scale(x, y, fig_path, xlabel='距离 （Km）', ylabel='单位到访人次 （人/km2）'):
     x = np.array(x)
     y = np.array(y)
     scl = max(y) / 100
@@ -144,21 +158,21 @@ def main_xy_with_scale(x, y, fig_path):
     popt, pcov = curve_fit(power_fit, np.array(x), np.array(y)/scl, maxfev=5000)
     fit_popt.append(popt)
     ax1 = plt.plot(x, power_fit(x, *popt)*scl, linestyle='--', color='b', linewidth=2, label='power law')
-    print(goodness_of_fit(power_fit(x, *popt), y/scl))
-    fit_r_r.append(goodness_of_fit(power_fit(x, *popt), y/scl))
+    print(uncentered_goodness_of_fit(power_fit(x, *popt), y/scl))
+    fit_r_r.append(uncentered_goodness_of_fit(power_fit(x, *popt), y/scl))
 
     popt, pcov = curve_fit(expon_fit, x , np.array(y)/scl, maxfev=5000)
     # print(popt)
     fit_popt.append(popt)
-    print(goodness_of_fit(expon_fit(x, *popt), y/scl))
-    fit_r_r.append(goodness_of_fit(expon_fit(x, *popt), y/scl))
+    print(uncentered_goodness_of_fit(expon_fit(x, *popt), y/scl))
+    fit_r_r.append(uncentered_goodness_of_fit(expon_fit(x, *popt), y/scl))
     ax1 = plt.plot(x, expon_fit(x, *popt)*scl, linestyle=':', color='g', linewidth=2, label='exponential')
 
     popt, pcov = curve_fit(lognorm_fit_scale, np.array(x), np.array(y/log_scl), maxfev=500000)
     fit_popt.append(popt)
     ax1 = plt.plot(x, lognorm_fit_scale(x, *popt)*log_scl, linestyle='-.', color='y', label='log normal')
-    print(goodness_of_fit(lognorm_fit_scale(x, *popt), y/log_scl))
-    fit_r_r.append(goodness_of_fit(lognorm_fit_scale(x, *popt), y/log_scl))
+    print(uncentered_goodness_of_fit(lognorm_fit_scale(x, *popt), y/log_scl))
+    fit_r_r.append(uncentered_goodness_of_fit(lognorm_fit_scale(x, *popt), y/log_scl))
     plt.legend(loc='upper right', fontsize=12)
     # 需要输出的
     print(candidate_fit[fit_r_r.index(max(fit_r_r))])
@@ -168,8 +182,8 @@ def main_xy_with_scale(x, y, fig_path):
     plt.title(str(candidate_fit[fit_r_r.index(max(fit_r_r))]))
     # plt.text(x=5, y=0, s=str(candidate_fit[fit_r_r.index(max(fit_r_r))]),
     #          fontdict=dict(fontsize=12, color='r', family='monospace', ))
-    plt.xlabel('距离 （Km）')
-    plt.ylabel('单位到访人次 （人/km2）')
+    plt.xlabel(xlabel)
+    plt.ylabel(ylabel)
     plt.savefig(fig_path)
     plt.close()
     return [candidate_fit[fit_r_r.index(max(fit_r_r))],
