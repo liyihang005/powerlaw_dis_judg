@@ -19,7 +19,7 @@ def read_all_data(data_path, st_name, fig_pa_path, res_path):
                 y.append(r[col_nm])
         # main_xy(x, y)
         fig_path = os.path.join(fig_pa_path, '{}_{}.jpg'.format(st_name, raw_data.iloc[i, 1]))
-        if len(x) > 1:
+        if len(x) > 10:
             tmp = main_xy_with_scale(x, y, fig_path)
             res.append([raw_data.iloc[i, 1]] + tmp)
     pd.DataFrame(res, columns=['park', 'dis', 'formula', 'popt', 'R2']).to_csv(res_path, index=None, )
@@ -50,10 +50,16 @@ def read_all_data_div(data_path, st_name, fig_pa_path, res_path):
 
 
 if __name__ == "__main__":
-    read_all_data(r'C:\Users\29420\Documents\WeChat Files\wxid_avb0egdv9lo422\FileStorage\File\2022-03\park_type_距离衰减0329(1).xlsx',
-                  st_name='社区公园',
-                  fig_pa_path=r'E:\000数据\kq',
-                  res_path=r'E:\000数据\kq\社区公园.csv')
+    # "综合公园"
+    # "专类公园"
+    # "社区公园"
+    # "郊野公园"
+    type_park = ["综合公园", "专类公园", "社区公园", "郊野公园"]
+    for tp in type_park:
+        read_all_data(r'E:\000数据\kq\0419\to燚航0419\人口密度__distance0419.xlsx',
+                      st_name=tp,
+                      fig_pa_path=r'E:\000数据\kq\0419\res0419人口密度__distance0419',
+                      res_path=r'E:\000数据\kq\0419\res0419人口密度__distance0419\{}.csv'.format(tp))
 
     # read_all_data_div(r'C:\Users\29420\Documents\WeChat Files\wxid_avb0egdv9lo422\FileStorage\File\2022-03\周末_工作日_parktype_距离衰减0330.xlsx',
     #                   st_name='周末',
