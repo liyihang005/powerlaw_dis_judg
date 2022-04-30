@@ -140,7 +140,7 @@ def main(data):
     plt.show()
 
 
-def main_xy_with_scale(x, y, fig_path, xlabel='距离 （Km）', ylabel='单位到访人次 （人/km2）'):
+def main_xy_with_scale(x, y, fig_path, xlabel='距离 （Km）', ylabel='单位到访人次 （人/km2）', log_swith='off'):
     x = np.array(x)
     y = np.array(y)
     scl = max(y) / 100
@@ -150,8 +150,8 @@ def main_xy_with_scale(x, y, fig_path, xlabel='距离 （Km）', ylabel='单位�
     # ax1 = f.add_subplot(1,1,1)
     plt.scatter(x, y, color='r', s=5)
     candidate_fit = ['power law', 'exponential', 'log normal']
-    candidate_popt = ['c0 + (x**m) * c', 'a * np.exp(-b * x) + c',
-                      '(1 / (x * sigma * np.sqrt(2 * np.pi))) * np.exp(-(np.log(x) - mu)**2 / (2 * sigma**2))']
+    candidate_popt = ['(x**m) * c * scl', '(a * np.exp(-b * x) + c) * scl',
+                      '((c / (x * sigma * np.sqrt(2 * np.pi))) * np.exp(-(np.log(x) - mu)**2 / (2 * sigma**2))) * scl']
     fit_r_r = []
     fit_popt = []
 
@@ -182,13 +182,20 @@ def main_xy_with_scale(x, y, fig_path, xlabel='距离 （Km）', ylabel='单位�
     plt.title(str(candidate_fit[fit_r_r.index(max(fit_r_r))]))
     # plt.text(x=5, y=0, s=str(candidate_fit[fit_r_r.index(max(fit_r_r))]),
     #          fontdict=dict(fontsize=12, color='r', family='monospace', ))
+    if log_swith == 'on':
+        plt.xscale('log')
+        plt.yscale('log')
     plt.xlabel(xlabel)
     plt.ylabel(ylabel)
     plt.savefig(fig_path)
     plt.close()
+    if fit_r_r.index(max(fit_r_r)) == 2:
+        scl_flag = log_scl
+    else:
+        scl_flag = scl
     return [candidate_fit[fit_r_r.index(max(fit_r_r))],
             candidate_popt[fit_r_r.index(max(fit_r_r))],
-            fit_popt[fit_r_r.index(max(fit_r_r))],
+            np.append(fit_popt[fit_r_r.index(max(fit_r_r))], scl_flag),
             max(fit_r_r)]
 
 

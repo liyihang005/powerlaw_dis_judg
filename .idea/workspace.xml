@@ -1,9 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="ad77335c-4a71-4e31-afd1-82e8ed64f1bd" name="Default Changelist" comment="把R2改成了uncentered R2 ,主要函数在main_xy_with_scale">
+    <list default="true" id="ad77335c-4a71-4e31-afd1-82e8ed64f1bd" name="Default Changelist" comment="把公园类型变成自动化操作，小于10个点不拟合">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/keqing/park_thesis.py" beforeDir="false" afterPath="$PROJECT_DIR$/keqing/park_thesis.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lyh/worker.py" beforeDir="false" afterPath="$PROJECT_DIR$/lyh/worker.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -164,7 +183,13 @@
       <workItem from="1648611286041" duration="13409000" />
       <workItem from="1648712537139" duration="1533000" />
       <workItem from="1649297879043" duration="13593000" />
-      <workItem from="1650424663136" duration="4650000" />
+      <workItem from="1650424663136" duration="5540000" />
+      <workItem from="1650547621694" duration="410000" />
+      <workItem from="1650872878845" duration="503000" />
+      <workItem from="1650938823781" duration="2897000" />
+      <workItem from="1650977224346" duration="1306000" />
+      <workItem from="1651217632106" duration="447000" />
+      <workItem from="1651218255032" duration="3444000" />
     </task>
     <task id="LOCAL-00001" summary="可青给到的社区公园后8个有问题">
       <created>1649302037666</created>
@@ -194,23 +219,51 @@
       <option name="project" value="LOCAL" />
       <updated>1649387733952</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="把公园类型变成自动化操作，小于10个点不拟合">
+      <created>1650508901522</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1650508901522</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="可青给到的社区公园后8个有问题" />
     <MESSAGE value="none" />
     <MESSAGE value="把R2改成了uncentered R2 ,主要函数在main_xy_with_scale" />
-    <option name="LAST_COMMIT_MESSAGE" value="把R2改成了uncentered R2 ,主要函数在main_xy_with_scale" />
+    <MESSAGE value="把公园类型变成自动化操作，小于10个点不拟合" />
+    <option name="LAST_COMMIT_MESSAGE" value="把公园类型变成自动化操作，小于10个点不拟合" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1010" y="446" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1649302270282">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1010" y="446" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2560.1400/-1920.365.1920.1040@0.0.2560.1400" timestamp="1649302270282" />
+    <state x="92" y="92" width="2376" height="1216" key="DiffContextDialog" timestamp="1650529837518">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="92" y="92" width="2376" height="1216" key="DiffContextDialog/0.0.2560.1400/-1920.365.1920.1040@0.0.2560.1400" timestamp="1650529837518" />
+    <state x="1060" y="441" key="FileChooserDialogImpl" timestamp="1651217698015">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1060" y="441" key="FileChooserDialogImpl/0.0.2560.1400/-1920.365.1920.1040@0.0.2560.1400" timestamp="1651217698015" />
     <state x="-1112" y="782" key="Github.ShareDialog" timestamp="1649301121040">
       <screen x="-1920" y="365" width="1920" height="1040" />
     </state>
@@ -219,26 +272,26 @@
       <screen x="-1920" y="365" width="1920" height="1040" />
     </state>
     <state x="-1164" y="589" key="Github.UntrackedFilesDialog/0.0.2560.1400/-1920.365.1920.1040@-1920.365.1920.1040" timestamp="1649301139789" />
-    <state width="2517" height="366" key="GridCell.Tab.0.bottom" timestamp="1650508625777">
+    <state width="2517" height="366" key="GridCell.Tab.0.bottom" timestamp="1651029281691">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1877" height="259" key="GridCell.Tab.0.bottom/0.0.2560.1400/-1920.365.1920.1040@-1920.365.1920.1040" timestamp="1648643737976" />
-    <state width="2517" height="366" key="GridCell.Tab.0.bottom/0.0.2560.1400/-1920.365.1920.1040@0.0.2560.1400" timestamp="1650508625777" />
-    <state width="2517" height="366" key="GridCell.Tab.0.center" timestamp="1650508625777">
+    <state width="2517" height="366" key="GridCell.Tab.0.bottom/0.0.2560.1400/-1920.365.1920.1040@0.0.2560.1400" timestamp="1651029281691" />
+    <state width="2517" height="366" key="GridCell.Tab.0.center" timestamp="1651029281691">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1877" height="259" key="GridCell.Tab.0.center/0.0.2560.1400/-1920.365.1920.1040@-1920.365.1920.1040" timestamp="1648643737976" />
-    <state width="2517" height="366" key="GridCell.Tab.0.center/0.0.2560.1400/-1920.365.1920.1040@0.0.2560.1400" timestamp="1650508625777" />
-    <state width="2517" height="366" key="GridCell.Tab.0.left" timestamp="1650508625777">
+    <state width="2517" height="366" key="GridCell.Tab.0.center/0.0.2560.1400/-1920.365.1920.1040@0.0.2560.1400" timestamp="1651029281691" />
+    <state width="2517" height="366" key="GridCell.Tab.0.left" timestamp="1651029281691">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1877" height="259" key="GridCell.Tab.0.left/0.0.2560.1400/-1920.365.1920.1040@-1920.365.1920.1040" timestamp="1648643737976" />
-    <state width="2517" height="366" key="GridCell.Tab.0.left/0.0.2560.1400/-1920.365.1920.1040@0.0.2560.1400" timestamp="1650508625777" />
-    <state width="2517" height="366" key="GridCell.Tab.0.right" timestamp="1650508625777">
+    <state width="2517" height="366" key="GridCell.Tab.0.left/0.0.2560.1400/-1920.365.1920.1040@0.0.2560.1400" timestamp="1651029281691" />
+    <state width="2517" height="366" key="GridCell.Tab.0.right" timestamp="1651029281691">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1877" height="259" key="GridCell.Tab.0.right/0.0.2560.1400/-1920.365.1920.1040@-1920.365.1920.1040" timestamp="1648643737976" />
-    <state width="2517" height="366" key="GridCell.Tab.0.right/0.0.2560.1400/-1920.365.1920.1040@0.0.2560.1400" timestamp="1650508625777" />
+    <state width="2517" height="366" key="GridCell.Tab.0.right/0.0.2560.1400/-1920.365.1920.1040@0.0.2560.1400" timestamp="1651029281691" />
     <state width="2517" height="293" key="GridCell.Tab.1.bottom" timestamp="1649729311576">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -260,17 +313,17 @@
     </state>
     <state x="-1334" y="621" key="SettingsEditor/0.0.2560.1400/-1920.365.1920.1040@-1920.365.1920.1040" timestamp="1649301000025" />
     <state x="781" y="344" key="SettingsEditor/0.0.2560.1400/-1920.365.1920.1040@0.0.2560.1400" timestamp="1649300930184" />
-    <state x="872" y="433" key="Vcs.Push.Dialog.v2" timestamp="1649388136639">
+    <state x="872" y="433" key="Vcs.Push.Dialog.v2" timestamp="1650508906632">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="872" y="433" key="Vcs.Push.Dialog.v2/0.0.2560.1400/-1920.365.1920.1040@0.0.2560.1400" timestamp="1649388136639" />
+    <state x="872" y="433" key="Vcs.Push.Dialog.v2/0.0.2560.1400/-1920.365.1920.1040@0.0.2560.1400" timestamp="1650508906632" />
     <state width="1288" height="708" key="XDebugger.FullValuePopup" timestamp="1648691835926">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1288" height="708" key="XDebugger.FullValuePopup/0.0.2560.1400/-1920.365.1920.1040@0.0.2560.1400" timestamp="1648691835926" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/powerlaw_master$park_thesis.coverage" NAME="park_thesis Coverage Results" MODIFIED="1650508625771" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/keqing" />
+    <SUITE FILE_PATH="coverage/powerlaw_master$park_thesis.coverage" NAME="park_thesis Coverage Results" MODIFIED="1650977929830" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/keqing" />
     <SUITE FILE_PATH="coverage/powerlaw_master$judge_dis.coverage" NAME="judge_dis Coverage Results" MODIFIED="1648196721815" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testing" />
     <SUITE FILE_PATH="coverage/powerlaw_master$func_fit.coverage" NAME="func_fit Coverage Results" MODIFIED="1648198883964" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lyh" />
     <SUITE FILE_PATH="coverage/powerlaw_master$worker.coverage" NAME="worker Coverage Results" MODIFIED="1648711791880" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lyh" />
