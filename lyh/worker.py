@@ -140,7 +140,7 @@ def main(data):
     plt.show()
 
 
-def main_xy_with_scale(x, y, fig_path, xlabel='距离 （Km）', ylabel='单位到访人次 （人/km2）', log_swith='off'):
+def main_xy_with_scale(x, y, fig_path, fit_path, xlabel='距离 （Km）', ylabel='单位到访人次 （人/km2）', log_swith='off'):
     x = np.array(x)
     y = np.array(y)
     scl = max(y) / 100
@@ -154,10 +154,12 @@ def main_xy_with_scale(x, y, fig_path, xlabel='距离 （Km）', ylabel='单位�
                       '((c / (x * sigma * np.sqrt(2 * np.pi))) * np.exp(-(np.log(x) - mu)**2 / (2 * sigma**2))) * scl']
     fit_r_r = []
     fit_popt = []
+    fitted_ys = []
 
     popt, pcov = curve_fit(power_fit, np.array(x), np.array(y)/scl, maxfev=5000)
     fit_popt.append(popt)
     ax1 = plt.plot(x, power_fit(x, *popt)*scl, linestyle='--', color='b', linewidth=2, label='power law')
+    fitted_ys.append(power_fit(x, *popt)*scl)
     print(uncentered_goodness_of_fit(power_fit(x, *popt), y/scl))
     fit_r_r.append(uncentered_goodness_of_fit(power_fit(x, *popt), y/scl))
 
@@ -167,10 +169,12 @@ def main_xy_with_scale(x, y, fig_path, xlabel='距离 （Km）', ylabel='单位�
     print(uncentered_goodness_of_fit(expon_fit(x, *popt), y/scl))
     fit_r_r.append(uncentered_goodness_of_fit(expon_fit(x, *popt), y/scl))
     ax1 = plt.plot(x, expon_fit(x, *popt)*scl, linestyle=':', color='g', linewidth=2, label='exponential')
+    fitted_ys.append(expon_fit(x, *popt)*scl)
 
     popt, pcov = curve_fit(lognorm_fit_scale, np.array(x), np.array(y/log_scl), maxfev=500000)
     fit_popt.append(popt)
     ax1 = plt.plot(x, lognorm_fit_scale(x, *popt)*log_scl, linestyle='-.', color='y', label='log normal')
+    fitted_ys.append(lognorm_fit_scale(x, *popt)*log_scl)
     print(uncentered_goodness_of_fit(lognorm_fit_scale(x, *popt), y/log_scl))
     fit_r_r.append(uncentered_goodness_of_fit(lognorm_fit_scale(x, *popt), y/log_scl))
     plt.legend(loc='upper right', fontsize=12)
@@ -193,6 +197,13 @@ def main_xy_with_scale(x, y, fig_path, xlabel='距离 （Km）', ylabel='单位�
         scl_flag = log_scl
     else:
         scl_flag = scl
+    fitted_y = fitted_ys[fit_r_r.index(max(fit_r_r))]
+    dic_fitted = {}
+    for i in range(len(x)):
+        dic_fitted[x[i]] = [fitted_y[i]]
+    pd.DataFrame(dic_fitted).to_excel(fit_path)
+
+#TODO 保存fitted_df到每一个excel
     return [candidate_fit[fit_r_r.index(max(fit_r_r))],
             candidate_popt[fit_r_r.index(max(fit_r_r))],
             np.append(fit_popt[fit_r_r.index(max(fit_r_r))], scl_flag),
