@@ -155,11 +155,12 @@ def main_xy_with_scale(x, y, fig_path, fit_path, xlabel='距离 （Km）', ylabe
     fit_r_r = []
     fit_popt = []
     fitted_ys = []
+    fitted_x = np.array([(ii + 1) * 0.25 for ii in range(int(50/0.25))])
 
     popt, pcov = curve_fit(power_fit, np.array(x), np.array(y)/scl, maxfev=5000)
     fit_popt.append(popt)
     ax1 = plt.plot(x, power_fit(x, *popt)*scl, linestyle='--', color='b', linewidth=2, label='power law')
-    fitted_ys.append(power_fit(x, *popt)*scl)
+    fitted_ys.append(power_fit(fitted_x, *popt)*scl)
     print(uncentered_goodness_of_fit(power_fit(x, *popt), y/scl))
     fit_r_r.append(uncentered_goodness_of_fit(power_fit(x, *popt), y/scl))
 
@@ -169,12 +170,12 @@ def main_xy_with_scale(x, y, fig_path, fit_path, xlabel='距离 （Km）', ylabe
     print(uncentered_goodness_of_fit(expon_fit(x, *popt), y/scl))
     fit_r_r.append(uncentered_goodness_of_fit(expon_fit(x, *popt), y/scl))
     ax1 = plt.plot(x, expon_fit(x, *popt)*scl, linestyle=':', color='g', linewidth=2, label='exponential')
-    fitted_ys.append(expon_fit(x, *popt)*scl)
+    fitted_ys.append(expon_fit(fitted_x, *popt)*scl)
 
     popt, pcov = curve_fit(lognorm_fit_scale, np.array(x), np.array(y/log_scl), maxfev=500000)
     fit_popt.append(popt)
     ax1 = plt.plot(x, lognorm_fit_scale(x, *popt)*log_scl, linestyle='-.', color='y', label='log normal')
-    fitted_ys.append(lognorm_fit_scale(x, *popt)*log_scl)
+    fitted_ys.append(lognorm_fit_scale(fitted_x, *popt)*log_scl)
     print(uncentered_goodness_of_fit(lognorm_fit_scale(x, *popt), y/log_scl))
     fit_r_r.append(uncentered_goodness_of_fit(lognorm_fit_scale(x, *popt), y/log_scl))
     plt.legend(loc='upper right', fontsize=12)
@@ -198,16 +199,16 @@ def main_xy_with_scale(x, y, fig_path, fit_path, xlabel='距离 （Km）', ylabe
     else:
         scl_flag = scl
     fitted_y = fitted_ys[fit_r_r.index(max(fit_r_r))]
-    dic_fitted = {}
-    for i in range(len(x)):
-        dic_fitted[x[i]] = [fitted_y[i]]
-    pd.DataFrame(dic_fitted).to_excel(fit_path)
+    # dic_fitted = {}
+    # for i in range(len(fitted_x)):
+    #     dic_fitted[fitted_x[i]] = [fitted_y[i]]
+    # pd.DataFrame(dic_fitted).to_excel(fit_path)
 
-#TODO 保存fitted_df到每一个excel
+#TODO 保存fitted_df到一整个excel
     return [candidate_fit[fit_r_r.index(max(fit_r_r))],
             candidate_popt[fit_r_r.index(max(fit_r_r))],
             np.append(fit_popt[fit_r_r.index(max(fit_r_r))], scl_flag),
-            max(fit_r_r)]
+            max(fit_r_r)], fitted_y
 
 
 def main_xy(x, y):
@@ -292,4 +293,6 @@ if __name__ == "__main__":
              fontdict=dict(fontsize=12, color='r',family='monospace',))
     plt.show()
 
+# if __name__ == '__main__':
+#     print(lognorm_fit_scale(0.25, 0.70980237, 0.81217533, 3.1264103) *   691.99994037)
 

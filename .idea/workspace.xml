@@ -20,13 +20,15 @@
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:keqing_thesis" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:dev" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </select>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ad77335c-4a71-4e31-afd1-82e8ed64f1bd" name="Default Changelist" comment="写出拟合得到的y的输出值，修改了对于series取值的方式（parkthesis line19）">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/keqing/park_thesis.py" beforeDir="false" afterPath="$PROJECT_DIR$/keqing/park_thesis.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lyh/worker.py" beforeDir="false" afterPath="$PROJECT_DIR$/lyh/worker.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +70,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.park_thesis">
+  <component name="RunManager" selected="Python.worker">
     <configuration name="func_fit" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="powerlaw-master" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -159,8 +161,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.park_thesis" />
         <item itemvalue="Python.worker" />
+        <item itemvalue="Python.park_thesis" />
         <item itemvalue="Python.func_fit" />
         <item itemvalue="Python.judge_dis" />
       </list>
@@ -271,7 +273,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="keqing_thesis" />
+                        <option value="dev" />
                       </list>
                     </value>
                   </entry>
@@ -313,49 +315,49 @@
       <screen x="-1920" y="365" width="1920" height="1040" />
     </state>
     <state x="-1164" y="589" key="Github.UntrackedFilesDialog/0.0.2560.1400/-1920.365.1920.1040@-1920.365.1920.1040" timestamp="1649301139789" />
-    <state width="1260" height="226" key="GridCell.Tab.0.bottom" timestamp="1651391339411">
+    <state width="1260" height="136" key="GridCell.Tab.0.bottom" timestamp="1651409504003">
       <screen x="0" y="0" width="1280" height="760" />
     </state>
-    <state width="1260" height="226" key="GridCell.Tab.0.bottom/0.0.1280.760@0.0.1280.760" timestamp="1651391339411" />
+    <state width="1260" height="136" key="GridCell.Tab.0.bottom/0.0.1280.760@0.0.1280.760" timestamp="1651409504003" />
     <state width="1877" height="259" key="GridCell.Tab.0.bottom/0.0.2560.1400/-1920.365.1920.1040@-1920.365.1920.1040" timestamp="1648643737976" />
     <state width="2517" height="366" key="GridCell.Tab.0.bottom/0.0.2560.1400/-1920.365.1920.1040@0.0.2560.1400" timestamp="1651029281691" />
-    <state width="1260" height="226" key="GridCell.Tab.0.center" timestamp="1651391339411">
+    <state width="1260" height="136" key="GridCell.Tab.0.center" timestamp="1651409504003">
       <screen x="0" y="0" width="1280" height="760" />
     </state>
-    <state width="1260" height="226" key="GridCell.Tab.0.center/0.0.1280.760@0.0.1280.760" timestamp="1651391339411" />
+    <state width="1260" height="136" key="GridCell.Tab.0.center/0.0.1280.760@0.0.1280.760" timestamp="1651409504003" />
     <state width="1877" height="259" key="GridCell.Tab.0.center/0.0.2560.1400/-1920.365.1920.1040@-1920.365.1920.1040" timestamp="1648643737976" />
     <state width="2517" height="366" key="GridCell.Tab.0.center/0.0.2560.1400/-1920.365.1920.1040@0.0.2560.1400" timestamp="1651029281691" />
-    <state width="1260" height="226" key="GridCell.Tab.0.left" timestamp="1651391339410">
+    <state width="1260" height="136" key="GridCell.Tab.0.left" timestamp="1651409504003">
       <screen x="0" y="0" width="1280" height="760" />
     </state>
-    <state width="1260" height="226" key="GridCell.Tab.0.left/0.0.1280.760@0.0.1280.760" timestamp="1651391339410" />
+    <state width="1260" height="136" key="GridCell.Tab.0.left/0.0.1280.760@0.0.1280.760" timestamp="1651409504003" />
     <state width="1877" height="259" key="GridCell.Tab.0.left/0.0.2560.1400/-1920.365.1920.1040@-1920.365.1920.1040" timestamp="1648643737976" />
     <state width="2517" height="366" key="GridCell.Tab.0.left/0.0.2560.1400/-1920.365.1920.1040@0.0.2560.1400" timestamp="1651029281691" />
-    <state width="1260" height="226" key="GridCell.Tab.0.right" timestamp="1651391339411">
+    <state width="1260" height="136" key="GridCell.Tab.0.right" timestamp="1651409504003">
       <screen x="0" y="0" width="1280" height="760" />
     </state>
-    <state width="1260" height="226" key="GridCell.Tab.0.right/0.0.1280.760@0.0.1280.760" timestamp="1651391339411" />
+    <state width="1260" height="136" key="GridCell.Tab.0.right/0.0.1280.760@0.0.1280.760" timestamp="1651409504003" />
     <state width="1877" height="259" key="GridCell.Tab.0.right/0.0.2560.1400/-1920.365.1920.1040@-1920.365.1920.1040" timestamp="1648643737976" />
     <state width="2517" height="366" key="GridCell.Tab.0.right/0.0.2560.1400/-1920.365.1920.1040@0.0.2560.1400" timestamp="1651029281691" />
-    <state width="1260" height="226" key="GridCell.Tab.1.bottom" timestamp="1651391339412">
+    <state width="1260" height="226" key="GridCell.Tab.1.bottom" timestamp="1651407216068">
       <screen x="0" y="0" width="1280" height="760" />
     </state>
-    <state width="1260" height="226" key="GridCell.Tab.1.bottom/0.0.1280.760@0.0.1280.760" timestamp="1651391339412" />
+    <state width="1260" height="226" key="GridCell.Tab.1.bottom/0.0.1280.760@0.0.1280.760" timestamp="1651407216068" />
     <state width="2517" height="293" key="GridCell.Tab.1.bottom/0.0.2560.1400/-1920.365.1920.1040@0.0.2560.1400" timestamp="1649729311576" />
-    <state width="1260" height="226" key="GridCell.Tab.1.center" timestamp="1651391339412">
+    <state width="1260" height="226" key="GridCell.Tab.1.center" timestamp="1651407216068">
       <screen x="0" y="0" width="1280" height="760" />
     </state>
-    <state width="1260" height="226" key="GridCell.Tab.1.center/0.0.1280.760@0.0.1280.760" timestamp="1651391339412" />
+    <state width="1260" height="226" key="GridCell.Tab.1.center/0.0.1280.760@0.0.1280.760" timestamp="1651407216068" />
     <state width="2517" height="293" key="GridCell.Tab.1.center/0.0.2560.1400/-1920.365.1920.1040@0.0.2560.1400" timestamp="1649729311576" />
-    <state width="1260" height="226" key="GridCell.Tab.1.left" timestamp="1651391339411">
+    <state width="1260" height="226" key="GridCell.Tab.1.left" timestamp="1651407216068">
       <screen x="0" y="0" width="1280" height="760" />
     </state>
-    <state width="1260" height="226" key="GridCell.Tab.1.left/0.0.1280.760@0.0.1280.760" timestamp="1651391339411" />
+    <state width="1260" height="226" key="GridCell.Tab.1.left/0.0.1280.760@0.0.1280.760" timestamp="1651407216068" />
     <state width="2517" height="293" key="GridCell.Tab.1.left/0.0.2560.1400/-1920.365.1920.1040@0.0.2560.1400" timestamp="1649729311576" />
-    <state width="1260" height="226" key="GridCell.Tab.1.right" timestamp="1651391339412">
+    <state width="1260" height="226" key="GridCell.Tab.1.right" timestamp="1651407216068">
       <screen x="0" y="0" width="1280" height="760" />
     </state>
-    <state width="1260" height="226" key="GridCell.Tab.1.right/0.0.1280.760@0.0.1280.760" timestamp="1651391339412" />
+    <state width="1260" height="226" key="GridCell.Tab.1.right/0.0.1280.760@0.0.1280.760" timestamp="1651407216068" />
     <state width="2517" height="293" key="GridCell.Tab.1.right/0.0.2560.1400/-1920.365.1920.1040@0.0.2560.1400" timestamp="1649729311576" />
     <state x="286" y="51" key="SettingsEditor" timestamp="1651390750971">
       <screen x="0" y="0" width="1280" height="760" />
@@ -363,24 +365,33 @@
     <state x="286" y="51" key="SettingsEditor/0.0.1280.760@0.0.1280.760" timestamp="1651390750971" />
     <state x="-1334" y="621" key="SettingsEditor/0.0.2560.1400/-1920.365.1920.1040@-1920.365.1920.1040" timestamp="1649301000025" />
     <state x="781" y="344" key="SettingsEditor/0.0.2560.1400/-1920.365.1920.1040@0.0.2560.1400" timestamp="1649300930184" />
-    <state x="436" y="228" key="Vcs.Push.Dialog.v2" timestamp="1651390792800">
+    <state x="436" y="228" key="Vcs.Push.Dialog.v2" timestamp="1651394577937">
       <screen x="0" y="0" width="1280" height="760" />
     </state>
-    <state x="436" y="228" key="Vcs.Push.Dialog.v2/0.0.1280.760@0.0.1280.760" timestamp="1651390792800" />
+    <state x="436" y="228" key="Vcs.Push.Dialog.v2/0.0.1280.760@0.0.1280.760" timestamp="1651394577937" />
     <state x="872" y="433" key="Vcs.Push.Dialog.v2/0.0.2560.1400/-1920.365.1920.1040@0.0.2560.1400" timestamp="1650508906632" />
-    <state width="644" height="385" key="XDebugger.FullValuePopup" timestamp="1651388734791">
+    <state width="644" height="385" key="XDebugger.FullValuePopup" timestamp="1651407198227">
       <screen x="0" y="0" width="1280" height="760" />
     </state>
-    <state width="644" height="385" key="XDebugger.FullValuePopup/0.0.1280.760@0.0.1280.760" timestamp="1651388734791" />
+    <state width="644" height="385" key="XDebugger.FullValuePopup/0.0.1280.760@0.0.1280.760" timestamp="1651407198227" />
     <state width="1288" height="708" key="XDebugger.FullValuePopup/0.0.2560.1400/-1920.365.1920.1040@0.0.2560.1400" timestamp="1648691835926" />
+    <state x="303" y="82" width="672" height="678" key="search.everywhere.popup" timestamp="1651407126242">
+      <screen x="0" y="0" width="1280" height="760" />
+    </state>
+    <state x="303" y="82" width="672" height="678" key="search.everywhere.popup/0.0.1280.760@0.0.1280.760" timestamp="1651407126242" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/keqing/park_thesis.py</url>
-          <line>18</line>
+          <line>20</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/keqing/park_thesis.py</url>
+          <line>13</line>
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

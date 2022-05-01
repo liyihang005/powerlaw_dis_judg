@@ -2,13 +2,15 @@ from lyh.worker import *
 
 
 
-def read_all_data(data_path, st_name, fig_pa_path, res_path, log_label='off'):
+def read_all_data(data_path, st_name, fig_pa_path, res_path, res_fit_path, log_label='off'):
     raw_data = pd.read_excel(data_path, sheet_name=st_name)
     if st_name == '社区公园':
         raw_data = raw_data.iloc[:-9, :]
     # print(raw_data.head())
     # print(raw_data.columns[2:])
     res = []
+    res_fitted = []
+    fitted_x = [(ii + 1) * 0.25 for ii in range(int(50/0.25))]
     for i, r in raw_data.iterrows():
 
         x = []
@@ -25,11 +27,14 @@ def read_all_data(data_path, st_name, fig_pa_path, res_path, log_label='off'):
             os.mkdir(os.path.join(fig_pa_path, 'fitted_value'))
         fitted_file_path = os.path.join(os.path.join(fig_pa_path, 'fitted_value'),
                                         '{}_{}.xlsx'.format(st_name, raw_data.iloc[i, 1]))
-        if len(x) > 10:
-            tmp = main_xy_with_scale(x, y, fig_path, fitted_file_path, log_swith=log_label)
-            res.append([raw_data.iloc[i, 1]] + tmp)
-    pd.DataFrame(res, columns=['park', 'dis', 'formula', 'popt', 'R2']).to_csv(res_path, index=None, )
 
+        if len(x) > 10:
+            tmp, fitted = main_xy_with_scale(x, y, fig_path, fitted_file_path, log_swith=log_label)
+            res.append([raw_data.iloc[i, 1]] + tmp)
+            res_fitted.append([raw_data.iloc[i, 1]] + list(fitted))
+
+    pd.DataFrame(res, columns=['park', 'dis', 'formula', 'popt', 'R2']).to_csv(res_path, index=None, )
+    pd.DataFrame(res_fitted, columns=['park'] + fitted_x).to_csv(res_fit_path, index=None, )
 
 def read_all_data_div(data_path, st_name, fig_pa_path, res_path):
     raw_data = pd.read_excel(data_path, sheet_name=st_name)
@@ -66,6 +71,7 @@ if __name__ == "__main__":
                       st_name=tp,
                       fig_pa_path=r'D:\数据\keqing\res_log',
                       res_path=r'D:\数据\keqing\res_log\{}.csv'.format(tp),
+                      res_fit_path=r'D:\数据\keqing\res_log\{}_fitted_value.csv'.format(tp),
                       log_label='on')
 
     # read_all_data_div(r'C:\Users\29420\Documents\WeChat Files\wxid_avb0egdv9lo422\FileStorage\File\2022-03\周末_工作日_parktype_距离衰减0330.xlsx',
