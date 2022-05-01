@@ -189,6 +189,7 @@ def main_xy_with_scale(x, y, fig_path, xlabel='距离 （Km）', ylabel='单位�
     plt.ylabel(ylabel)
     plt.savefig(fig_path)
     plt.close()
+    # 增加缩放输出正确的公式
     if fit_r_r.index(max(fit_r_r)) == 2:
         scl_flag = log_scl
     else:
